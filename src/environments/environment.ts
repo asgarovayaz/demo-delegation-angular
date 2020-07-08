@@ -1,0 +1,15 @@
+export const environment = {
+  production: false,
+  apiUrl: 'http://localhost:5000/',
+  apiVersion: '1.0',
+  defaultMenuType: 'menu-default',
+  subHiddenBreakpoint: 1440,
+  menuHiddenBreakpoint: 768,
+  themeColorStorageKey: 'delegation-themecolor',
+  isMultiColorActive: true,
+  defaultColor: 'light.blueolympic',
+  isDarkSwitchActive: true,
+  defaultDirection: 'ltr',
+  themeRadiusStorageKey: 'delegation-themeradius',
+  isAuthGuardActive: true,
+};

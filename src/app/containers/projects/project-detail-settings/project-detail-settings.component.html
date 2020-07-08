@@ -1,0 +1,472 @@
+<app-settings-header></app-settings-header>
+
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="mb-4">{{ 'projects.settingsform.projectinfromation' | translate }}</h5>
+
+    <div class="form-row">
+
+      <div class="form-group col-md-1 col-lg-1 col-xs-12">
+        <label for="settings_code">{{ 'projects.settingsform.code' | translate }}</label>
+        <input type="text" class="form-control" disabled placeholder="Not assigned">
+      </div>
+
+      <div class="form-group col-md-11 col-lg-11 col-xs-12">
+        <label for="settings_name">{{ 'projects.settingsform.name' | translate }}</label>
+        <input type="text" class="form-control" id="settings_name"
+          placeholder="{{ 'projects.settingsform.name' | translate }}">
+      </div>
+
+    </div>
+
+    <div class="form-row">
+
+      <div class="form-group col-md-2 col-lg-2 col-xs-12">
+        <label for="settings_country">{{ 'projects.settingsform.country' | translate }}</label>
+        <ng-select [items]="country" bindLabel="Name" bindValue="Alpha3Code" [(ngModel)]="selectedLocation"></ng-select>
+      </div>
+
+      <div class="form-group col-md-2 col-lg-2 col-xs-12">
+        <label for="settings_location">{{ 'projects.settingsform.location' | translate }}</label>
+        <ng-select [items]="country" bindLabel="Name" bindValue="Alpha3Code" [(ngModel)]="selectedLocation"></ng-select>
+      </div>
+      <div class="form-group col-md-2 col-lg-2 col-xs-12">
+        <label for="settings_discipline">{{ 'projects.settingsform.discipline' | translate }}</label>
+        <ng-select [items]="discipline" bindLabel="FullName" bindValue="Id" [(ngModel)]="selectedDiscipline"></ng-select>
+      </div>
+
+      <div class="form-group col-md-2 col-lg-2 col-xs-12">
+        <label for="settings_currency">{{ 'projects.settingsform.currency' | translate }}</label>
+        <ng-select [items]="currency" bindLabel="Short" bindValue="Id" [(ngModel)]="selectedCurrency"></ng-select>
+      </div>
+
+      <div class="form-group col-md-1 col-lg-1 col-xs-6">
+        <label for="settings_start_and_enddate">{{ 'projects.settingsform.start_date' | translate }}</label>
+        <input type="text" class="form-control" placeholder="{{ 'projects.settingsform.start_date' | translate }}"
+          bsDatepicker [container]="'html'" [bsConfig]="{ adaptivePosition: true, dateInputFormat: 'DD/MM/YYYY' }">
+      </div>
+      <div class="form-group col-md-1 col-lg-1 col-xs-6">
+        <timepicker class="timepicker" [mousewheel]="true" [showMeridian]="false"></timepicker>
+      </div>
+
+      <div class="form-group col-md-1 col-lg-1 col-xs-6">
+        <label for="settings_start_and_enddate">{{ 'projects.settingsform.end_date' | translate }}</label>
+        <input type="text" class="form-control" placeholder="{{ 'projects.settingsform.end_date' | translate }}"
+          bsDatepicker [container]="'html'" [bsConfig]="{ adaptivePosition: true, dateInputFormat: 'DD/MM/YYYY' }">
+      </div>
+      <div class="form-group col-md-1 col-lg-1 col-xs-6">
+        <timepicker class="timepicker" [mousewheel]="true" [showMeridian]="false"></timepicker>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<div class="card mb-4">
+  <div class="card-body">
+    <label for="settings_bank_requisites">{{ 'projects.settingsform.bank_requisites' | translate }}</label>
+    <quill-editor [placeholder]="''" [modules]="editor_module"></quill-editor>
+  </div>
+</div>
+
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="mb-4">{{ 'projects.settingsform.features' | translate }}</h5>
+
+    <div class="form-row">
+
+      <div class="form-group col-md-4 col-lg-4 col-xs-12">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="settings_accomondation">
+          <label class="custom-control-label" for="settings_accomondation">{{ 'projects.settingsform.accomondation' | translate }}</label>
+        </div>
+      </div>
+
+      <div class="form-group col-md-4 col-lg-4 col-xs-12">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="settings_meals">
+          <label class="custom-control-label" for="settings_meals">{{ 'projects.settingsform.meals' | translate }}</label>
+        </div>
+      </div>
+
+      <div class="form-group col-md-4 col-lg-4 col-xs-12">
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="settings_music">
+          <label class="custom-control-label" for="settings_music">{{ 'projects.settingsform.music' | translate }}</label>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="mb-4">{{ 'projects.settingsform.deadlines' | translate }}</h5>
+
+    <div class="row">
+
+      <div class="col-md-6 col-lg-6 col-xs-12">
+
+        <div class="form-row">
+
+          <div class="form-group col-md-4 col-lg-4 col-xs-6">
+            <label
+              for="settings_delegationfillingdate">{{ 'projects.settingsform.delegationfillingdate' | translate }}</label>
+            <input type="text" class="form-control" placeholder="{{ 'projects.settingsform.start_date' | translate }}"
+              bsDatepicker [container]="'html'" [bsConfig]="{ adaptivePosition: true, dateInputFormat: 'DD/MM/YYYY' }">
+          </div>
+
+          <div class="form-group col-md-2 col-lg-2 col-xs-6">
+            <timepicker class="timepicker" [mousewheel]="true" [showMeridian]="false"></timepicker>
+          </div>
+
+          <div class="form-group col-md-4 col-lg-4 col-xs-6">
+            <label for="settings_delegationfillingdate">{{ 'projects.settingsform.end_date' | translate }}</label>
+            <input type="text" class="form-control" placeholder="{{ 'projects.settingsform.end_date' | translate }}"
+              bsDatepicker [container]="'html'" [bsConfig]="{ adaptivePosition: true, dateInputFormat: 'DD/MM/YYYY' }">
+          </div>
+
+          <div class="form-group col-md-2 col-lg-2 col-xs-6">
+            <timepicker class="timepicker" [mousewheel]="true" [showMeridian]="false"></timepicker>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="col-md-6 col-lg-6 col-xs-12">
+
+        <div class="form-row">
+
+          <div class="form-group col-md-4 col-lg-4 col-xs-6">
+            <label for="settings_hotelfillingdate">{{ 'projects.settingsform.hotelfillingdate' | translate }}</label>
+            <input type="text" class="form-control" placeholder="{{ 'projects.settingsform.start_date' | translate }}"
+              bsDatepicker [container]="'html'" [bsConfig]="{ adaptivePosition: true, dateInputFormat: 'DD/MM/YYYY' }">
+          </div>
+
+          <div class="form-group col-md-2 col-lg-2 col-xs-6">
+            <timepicker class="timepicker" [mousewheel]="true" [showMeridian]="false"></timepicker>
+          </div>
+
+          <div class="form-group col-md-4 col-lg-4 col-xs-6">
+            <label for="settings_hotelfillingdate">{{ 'projects.settingsform.end_date' | translate }}</label>
+            <input type="text" class="form-control" placeholder="{{ 'projects.settingsform.end_date' | translate }}"
+              bsDatepicker [container]="'html'" [bsConfig]="{ adaptivePosition: true, dateInputFormat: 'DD/MM/YYYY' }">
+          </div>
+
+          <div class="form-group col-md-2 col-lg-2 col-xs-6">
+            <timepicker class="timepicker" [mousewheel]="true" [showMeridian]="false"></timepicker>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-6 col-lg-6 col-xs-12">
+
+        <div class="form-row">
+
+          <div class="form-group col-md-4 col-lg-4 col-xs-6">
+            <label for="settings_hotelcheckindate">{{ 'projects.settingsform.hotelcheckindate' | translate }}</label>
+            <input type="text" class="form-control" placeholder="{{ 'projects.settingsform.start_date' | translate }}"
+              bsDatepicker [container]="'html'" [bsConfig]="{ adaptivePosition: true, dateInputFormat: 'DD/MM/YYYY' }">
+          </div>
+
+          <div class="form-group col-md-2 col-lg-2 col-xs-6">
+            <timepicker class="timepicker" [mousewheel]="true" [showMeridian]="false"></timepicker>
+          </div>
+
+          <div class="form-group col-md-4 col-lg-4 col-xs-6">
+            <label for="settings_hotelcheckindate">{{ 'projects.settingsform.end_date' | translate }}</label>
+            <input type="text" class="form-control" placeholder="{{ 'projects.settingsform.end_date' | translate }}"
+              bsDatepicker [container]="'html'" [bsConfig]="{ adaptivePosition: true, dateInputFormat: 'DD/MM/YYYY' }">
+          </div>
+
+          <div class="form-group col-md-2 col-lg-2 col-xs-6">
+            <timepicker class="timepicker" [mousewheel]="true" [showMeridian]="false"></timepicker>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="col-md-6 col-lg-6 col-xs-12">
+
+        <div class="form-row">
+
+          <div class="form-group col-md-4 col-lg-4 col-xs-6">
+            <label for="settings_roomfillingdate">{{ 'projects.settingsform.roomfillingdate' | translate }}</label>
+            <input type="text" class="form-control" placeholder="{{ 'projects.settingsform.start_date' | translate }}"
+              bsDatepicker [container]="'html'" [bsConfig]="{ adaptivePosition: true, dateInputFormat: 'DD/MM/YYYY' }">
+          </div>
+
+          <div class="form-group col-md-2 col-lg-2 col-xs-6">
+            <timepicker class="timepicker" [mousewheel]="true" [showMeridian]="false"></timepicker>
+          </div>
+
+          <div class="form-group col-md-4 col-lg-4 col-xs-6">
+            <label for="settings_roomfillingdate">{{ 'projects.settingsform.end_date' | translate }}</label>
+            <input type="text" class="form-control" placeholder="{{ 'projects.settingsform.end_date' | translate }}"
+              bsDatepicker [container]="'html'" [bsConfig]="{ adaptivePosition: true, dateInputFormat: 'DD/MM/YYYY' }">
+          </div>
+
+          <div class="form-group col-md-2 col-lg-2 col-xs-6">
+            <timepicker class="timepicker" [mousewheel]="true" [showMeridian]="false"></timepicker>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-6 col-lg-6 col-xs-12">
+  
+          <div class="form-row">
+  
+            <div class="form-group col-md-4 col-lg-4 col-xs-6">
+              <label for="settings_mealsfillingdate">{{ 'projects.settingsform.mealsfillingdate' | translate }}</label>
+              <input type="text" class="form-control" placeholder="{{ 'projects.settingsform.start_date' | translate }}"
+                bsDatepicker [container]="'html'" [bsConfig]="{ adaptivePosition: true, dateInputFormat: 'DD/MM/YYYY' }">
+            </div>
+  
+            <div class="form-group col-md-2 col-lg-2 col-xs-6">
+              <timepicker class="timepicker" [mousewheel]="true" [showMeridian]="false"></timepicker>
+            </div>
+  
+            <div class="form-group col-md-4 col-lg-4 col-xs-6">
+              <label for="settings_mealsfillingdate">{{ 'projects.settingsform.end_date' | translate }}</label>
+              <input type="text" class="form-control" placeholder="{{ 'projects.settingsform.end_date' | translate }}"
+                bsDatepicker [container]="'html'" [bsConfig]="{ adaptivePosition: true, dateInputFormat: 'DD/MM/YYYY' }">
+            </div>
+  
+            <div class="form-group col-md-2 col-lg-2 col-xs-6">
+              <timepicker class="timepicker" [mousewheel]="true" [showMeridian]="false"></timepicker>
+            </div>
+  
+          </div>
+  
+        </div>
+  
+        <div class="col-md-6 col-lg-6 col-xs-12">
+  
+          <div class="form-row">
+  
+            <div class="form-group col-md-4 col-lg-4 col-xs-6">
+              <label for="settings_minmealsstartdate">{{ 'projects.settingsform.minmealsstartdate' | translate }}</label>
+              <input type="text" class="form-control" placeholder="{{ 'projects.settingsform.start_date' | translate }}"
+                bsDatepicker [container]="'html'" [bsConfig]="{ adaptivePosition: true, dateInputFormat: 'DD/MM/YYYY' }">
+            </div>
+  
+            <div class="form-group col-md-2 col-lg-2 col-xs-6">
+              <timepicker class="timepicker" [mousewheel]="true" [showMeridian]="false"></timepicker>
+            </div>
+  
+            <div class="form-group col-md-4 col-lg-4 col-xs-6">
+              <label for="settings_minmealsstartdate">{{ 'projects.settingsform.end_date' | translate }}</label>
+              <input type="text" class="form-control" placeholder="{{ 'projects.settingsform.end_date' | translate }}"
+                bsDatepicker [container]="'html'" [bsConfig]="{ adaptivePosition: true, dateInputFormat: 'DD/MM/YYYY' }">
+            </div>
+  
+            <div class="form-group col-md-2 col-lg-2 col-xs-6">
+              <timepicker class="timepicker" [mousewheel]="true" [showMeridian]="false"></timepicker>
+            </div>
+  
+          </div>
+  
+        </div>
+  
+    </div>
+  
+
+    <div class="row">
+
+        <div class="col-md-6 col-lg-6 col-xs-12">
+  
+          <div class="form-row">
+  
+            <div class="form-group col-md-4 col-lg-4 col-xs-6">
+              <label for="settings_visafillingstartdate">{{ 'projects.settingsform.visafillingstartdate' | translate }}</label>
+              <input type="text" class="form-control" placeholder="{{ 'projects.settingsform.start_date' | translate }}"
+                bsDatepicker [container]="'html'" [bsConfig]="{ adaptivePosition: true, dateInputFormat: 'DD/MM/YYYY' }">
+            </div>
+  
+            <div class="form-group col-md-2 col-lg-2 col-xs-6">
+              <timepicker class="timepicker" [mousewheel]="true" [showMeridian]="false"></timepicker>
+            </div>
+  
+            <div class="form-group col-md-4 col-lg-4 col-xs-6">
+              <label for="settings_visafillingstartdate">{{ 'projects.settingsform.end_date' | translate }}</label>
+              <input type="text" class="form-control" placeholder="{{ 'projects.settingsform.end_date' | translate }}"
+                bsDatepicker [container]="'html'" [bsConfig]="{ adaptivePosition: true, dateInputFormat: 'DD/MM/YYYY' }">
+            </div>
+  
+            <div class="form-group col-md-2 col-lg-2 col-xs-6">
+              <timepicker class="timepicker" [mousewheel]="true" [showMeridian]="false"></timepicker>
+            </div>
+  
+          </div>
+  
+        </div>
+  
+        <div class="col-md-6 col-lg-6 col-xs-12">
+  
+          <div class="form-row">
+  
+            <div class="form-group col-md-4 col-lg-4 col-xs-6">
+              <label for="settings_flightfillingstartdate">{{ 'projects.settingsform.flightfillingstartdate' | translate }}</label>
+              <input type="text" class="form-control" placeholder="{{ 'projects.settingsform.start_date' | translate }}"
+                bsDatepicker [container]="'html'" [bsConfig]="{ adaptivePosition: true, dateInputFormat: 'DD/MM/YYYY' }">
+            </div>
+  
+            <div class="form-group col-md-2 col-lg-2 col-xs-6">
+              <timepicker class="timepicker" [mousewheel]="true" [showMeridian]="false"></timepicker>
+            </div>
+  
+            <div class="form-group col-md-4 col-lg-4 col-xs-6">
+              <label for="settings_flightfillingstartdate">{{ 'projects.settingsform.end_date' | translate }}</label>
+              <input type="text" class="form-control" placeholder="{{ 'projects.settingsform.end_date' | translate }}"
+                bsDatepicker [container]="'html'" [bsConfig]="{ adaptivePosition: true, dateInputFormat: 'DD/MM/YYYY' }">
+            </div>
+  
+            <div class="form-group col-md-2 col-lg-2 col-xs-6">
+              <timepicker class="timepicker" [mousewheel]="true" [showMeridian]="false"></timepicker>
+            </div>
+  
+          </div>
+  
+        </div>
+  
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-6 col-lg-6 col-xs-12">
+  
+          <div class="form-row">
+  
+            <div class="form-group col-md-4 col-lg-4 col-xs-6">
+              <label for="settings_minarrivaldate">{{ 'projects.settingsform.minarrivaldate' | translate }}</label>
+              <input type="text" class="form-control" placeholder="{{ 'projects.settingsform.start_date' | translate }}"
+                bsDatepicker [container]="'html'" [bsConfig]="{ adaptivePosition: true, dateInputFormat: 'DD/MM/YYYY' }">
+            </div>
+  
+            <div class="form-group col-md-2 col-lg-2 col-xs-6">
+              <timepicker class="timepicker" [mousewheel]="true" [showMeridian]="false"></timepicker>
+            </div>
+  
+            <div class="form-group col-md-4 col-lg-4 col-xs-6">
+              <label for="settings_minarrivaldate">{{ 'projects.settingsform.end_date' | translate }}</label>
+              <input type="text" class="form-control" placeholder="{{ 'projects.settingsform.end_date' | translate }}"
+                bsDatepicker [container]="'html'" [bsConfig]="{ adaptivePosition: true, dateInputFormat: 'DD/MM/YYYY' }">
+            </div>
+  
+            <div class="form-group col-md-2 col-lg-2 col-xs-6">
+              <timepicker class="timepicker" [mousewheel]="true" [showMeridian]="false"></timepicker>
+            </div>
+  
+          </div>
+  
+        </div>
+  
+        <div class="col-md-6 col-lg-6 col-xs-12">
+  
+          <div class="form-row">
+  
+            <div class="form-group col-md-4 col-lg-4 col-xs-6">
+              <label for="settings_mindeparturedate">{{ 'projects.settingsform.mindeparturedate' | translate }}</label>
+              <input type="text" class="form-control" placeholder="{{ 'projects.settingsform.start_date' | translate }}"
+                bsDatepicker [container]="'html'" [bsConfig]="{ adaptivePosition: true, dateInputFormat: 'DD/MM/YYYY' }">
+            </div>
+  
+            <div class="form-group col-md-2 col-lg-2 col-xs-6">
+              <timepicker class="timepicker" [mousewheel]="true" [showMeridian]="false"></timepicker>
+            </div>
+  
+            <div class="form-group col-md-4 col-lg-4 col-xs-6">
+              <label for="settings_mindeparturedate">{{ 'projects.settingsform.end_date' | translate }}</label>
+              <input type="text" class="form-control" placeholder="{{ 'projects.settingsform.end_date' | translate }}"
+                bsDatepicker [container]="'html'" [bsConfig]="{ adaptivePosition: true, dateInputFormat: 'DD/MM/YYYY' }">
+            </div>
+  
+            <div class="form-group col-md-2 col-lg-2 col-xs-6">
+              <timepicker class="timepicker" [mousewheel]="true" [showMeridian]="false"></timepicker>
+            </div>
+  
+          </div>
+  
+        </div>
+  
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-6 col-lg-6 col-xs-12">
+  
+          <div class="form-row">
+  
+            <div class="form-group col-md-4 col-lg-4 col-xs-6">
+              <label for="settings_photofillingdate">{{ 'projects.settingsform.photofillingdate' | translate }}</label>
+              <input type="text" class="form-control" placeholder="{{ 'projects.settingsform.start_date' | translate }}"
+                bsDatepicker [container]="'html'" [bsConfig]="{ adaptivePosition: true, dateInputFormat: 'DD/MM/YYYY' }">
+            </div>
+  
+            <div class="form-group col-md-2 col-lg-2 col-xs-6">
+              <timepicker class="timepicker" [mousewheel]="true" [showMeridian]="false"></timepicker>
+            </div>
+  
+            <div class="form-group col-md-4 col-lg-4 col-xs-6">
+              <label for="settings_photofillingdate">{{ 'projects.settingsform.end_date' | translate }}</label>
+              <input type="text" class="form-control" placeholder="{{ 'projects.settingsform.end_date' | translate }}"
+                bsDatepicker [container]="'html'" [bsConfig]="{ adaptivePosition: true, dateInputFormat: 'DD/MM/YYYY' }">
+            </div>
+  
+            <div class="form-group col-md-2 col-lg-2 col-xs-6">
+              <timepicker class="timepicker" [mousewheel]="true" [showMeridian]="false"></timepicker>
+            </div>
+  
+          </div>
+  
+        </div>
+  
+        <div class="col-md-6 col-lg-6 col-xs-12">
+  
+          <div class="form-row">
+  
+            <div class="form-group col-md-4 col-lg-4 col-xs-6">
+              <label for="settings_musicfillingdate">{{ 'projects.settingsform.musicfillingdate' | translate }}</label>
+              <input type="text" class="form-control" placeholder="{{ 'projects.settingsform.start_date' | translate }}"
+                bsDatepicker [container]="'html'" [bsConfig]="{ adaptivePosition: true, dateInputFormat: 'DD/MM/YYYY' }">
+            </div>
+  
+            <div class="form-group col-md-2 col-lg-2 col-xs-6">
+              <timepicker class="timepicker" [mousewheel]="true" [showMeridian]="false"></timepicker>
+            </div>
+  
+            <div class="form-group col-md-4 col-lg-4 col-xs-6">
+              <label for="settings_musicfillingdate">{{ 'projects.settingsform.end_date' | translate }}</label>
+              <input type="text" class="form-control" placeholder="{{ 'projects.settingsform.end_date' | translate }}"
+                bsDatepicker [container]="'html'" [bsConfig]="{ adaptivePosition: true, dateInputFormat: 'DD/MM/YYYY' }">
+            </div>
+  
+            <div class="form-group col-md-2 col-lg-2 col-xs-6">
+              <timepicker class="timepicker" [mousewheel]="true" [showMeridian]="false"></timepicker>
+            </div>
+  
+          </div>
+  
+        </div>
+  
+    </div>
+
+  </div>
+</div>

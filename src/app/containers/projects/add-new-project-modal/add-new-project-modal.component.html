@@ -1,0 +1,62 @@
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">{{'projects.add' | translate}}</h4>
+    <button type="button" class="close pull-right" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+
+    <div class="form-group">
+      <label>{{ 'projects.settingsform.name' | translate }}</label>
+      <input type="email" class="form-control" placeholder="">
+    </div>
+
+    <div class="form-group">
+      <label>{{ 'projects.settingsform.country' | translate }}</label>
+      <ng-select [items]="country" bindLabel="Name" bindValue="Alpha3Code" [(ngModel)]="selectedCountry"></ng-select>
+    </div>
+
+    <div class="form-group">
+        <label>{{ 'projects.settingsform.location' | translate }}</label>
+        <ng-select [items]="country" bindLabel="Name" bindValue="Alpha3Code" [(ngModel)]="selectedLocation"></ng-select>
+    </div>
+
+    <div class="form-group">
+        <label>{{ 'projects.settingsform.discipline' | translate }}</label>
+        <ng-select [items]="discipline" bindLabel="FullName" bindValue="Id" [(ngModel)]="selectedDiscipline"></ng-select>
+    </div>    
+
+    <div class="form-group">
+        <label>{{ 'projects.settingsform.currency' | translate }}</label>
+        <ng-select [items]="currency" bindLabel="Short" bindValue="Id" [(ngModel)]="selectedCurrency"></ng-select>
+    </div>        
+
+    <div class="row">
+        <div class="form-group col-md-7">
+            <label for="settings_start_and_enddate">{{ 'projects.settingsform.start_date' | translate }}</label>
+            <input type="text" class="form-control" placeholder="{{ 'projects.settingsform.start_date' | translate }}"
+              bsDatepicker [container]="'html'" [bsConfig]="{ adaptivePosition: true, dateInputFormat: 'DD/MM/YYYY' }">
+          </div>
+          <div class="form-group col-md-5">
+            <timepicker class="timepicker" [mousewheel]="true" [showMeridian]="false"></timepicker>
+          </div>
+    </div>
+    
+    <div class="row">
+        <div class="form-group col-md-7">
+            <label for="settings_start_and_enddate">{{ 'projects.settingsform.end_date' | translate }}</label>
+            <input type="text" class="form-control" placeholder="{{ 'projects.settingsform.end_date' | translate }}"
+              bsDatepicker [container]="'html'" [bsConfig]="{ adaptivePosition: true, dateInputFormat: 'DD/MM/YYYY' }">
+          </div>
+          <div class="form-group col-md-5">
+            <timepicker class="timepicker" [mousewheel]="true" [showMeridian]="false"></timepicker>
+          </div>
+    </div>
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-primary" (click)="modalRef.hide()">{{'projects.cancel' | translate }}</button>
+    <button type="submit" class="btn btn-primary float-right">{{ 'projects.save' | translate}}</button>
+  </div>
+</ng-template>

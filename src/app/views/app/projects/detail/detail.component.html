@@ -1,0 +1,114 @@
+<div class="row">
+  <div class="col-12">
+    <div>
+      <h1>[AG1] Project name 1</h1>
+      <app-breadcrumb></app-breadcrumb>
+    </div>
+    <tabset class="separator-tabs ml-0" [justified]="true">
+      <tab [heading]="('projects.details' | translate)" class="tab-content">
+        <div class="row">
+          <div class="col-12 col-lg-4 mb-4">
+            <app-project-detail-info-alt></app-project-detail-info-alt>
+          </div>
+          <div class="col-12 col-lg-8">
+            <div class="row">
+              <div class="col-12 mb-4">
+                <alert type="danger rounded" [dismissible]="true">
+                  EVENT IS HOSTED BAKU, AZERBAIJAN. TIMEZONE IS GMT+4. {{'projects.detail.timezone_alert' | translate}}
+                </alert>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 mb-4">
+                <app-project-info-carousel></app-project-info-carousel>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4 mb-4">
+                    <app-radial-process-card [title]="('projects.detail.hotel_reserved' | translate)" [percent]="53" [isSortable]="false"[class]="'mb-4'"></app-radial-process-card>
+              </div>
+              <div class="col-4 mb-4">
+                    <app-radial-process-card [title]="('projects.detail.meal_reserved' | translate)" [percent]="74" [isSortable]="false"[class]="'mb-4'"></app-radial-process-card>
+              </div>
+              <div class="col-4 mb-4">
+                   <app-radial-process-card [title]="('projects.detail.person_filled' | translate)" [percent]="35" [isSortable]="false"[class]="'mb-4'"></app-radial-process-card>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4 mb-4">
+                <app-radial-process-card [title]="('projects.detail.room_reserved' | translate)" [percent]="54" [isSortable]="false"[class]="'mb-4'"></app-radial-process-card>
+              </div>
+              <div class="col-4 mb-4">
+                    <app-radial-process-card [title]="('projects.detail.documents_filled' | translate)" [percent]="23" [isSortable]="false"[class]="'mb-4'"></app-radial-process-card>
+              </div>
+              <div class="col-4 mb-4">
+                    <app-radial-process-card [title]="('projects.detail.flight_filld' | translate)" [percent]="32" [isSortable]="false"[class]="'mb-4'"></app-radial-process-card>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4 mb-4">
+                <app-radial-process-card [title]="('projects.detail.flight_reserved' | translate)" [percent]="74" [isSortable]="false"[class]="'mb-4'"></app-radial-process-card>
+              </div>
+              <div class="col-4 mb-4">
+                    <app-radial-process-card [title]="('projects.detail.units_filled' | translate)" [percent]="98" [isSortable]="false"[class]="'mb-4'"></app-radial-process-card>
+              </div>
+              <div class="col-4 mb-4">
+                    <app-radial-process-card [title]="('projects.detail.music_filled' | translate)" [percent]="55" [isSortable]="false"[class]="'mb-4'"></app-radial-process-card>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </tab>
+      <tab [heading]="('projects.settings' | translate)" class="tab-content">
+        <div class="row">
+          <div class="col-12">
+            <app-project-detail-settings></app-project-detail-settings>
+          </div>
+        </div>
+      </tab>
+      <tab [heading]="('projects.users' | translate)" class="tab-content">
+        <div class="row">
+          <div class="col-12">
+            <app-project-detail-users></app-project-detail-users>
+          </div>
+        </div>
+      </tab>
+      <tab [heading]="('projects.hotels' | translate)" class="tab-content">
+        <div class="row">
+          <div class="col-12">
+            <app-project-detail-hotels></app-project-detail-hotels>
+          </div>
+        </div>
+      </tab>
+      <tab [heading]="('projects.meals' | translate)" class="tab-content">
+        <div class="row">
+          <div class="col-12">
+            <app-project-detail-meals></app-project-detail-meals>
+          </div>
+        </div>
+      </tab>
+      <tab [heading]="('projects.delegations' | translate)" class="tab-content">
+        <div class="row">
+          <div class="col-12">
+            <app-project-detail-delegations></app-project-detail-delegations>
+          </div>
+        </div>
+      </tab>
+      <tab [heading]="('projects.export' | translate)" class="tab-content">
+        <div class="row">
+          <div class="col-12">
+            <app-project-detail-export></app-project-detail-export>
+          </div>
+        </div>
+      </tab>
+      <tab [heading]="('projects.mail' | translate)" class="tab-content">
+        <div class="row">
+          <div class="col-12">
+            <app-project-detail-mail></app-project-detail-mail>
+          </div>
+        </div>
+      </tab>
+    </tabset>
+  </div>
+</div>

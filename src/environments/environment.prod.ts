@@ -1,0 +1,15 @@
+export const environment = {
+  production: true,
+  apiUrl:  'http://api.delegation.dev.gymdata.online/',
+  apiVersion: '1.0',
+  defaultMenuType: 'menu-default',
+  subHiddenBreakpoint: 1440,
+  menuHiddenBreakpoint: 768,
+  themeColorStorageKey: 'delegation-themecolor',
+  isMultiColorActive: true,
+  defaultColor: 'light.blueolympic',
+  isDarkSwitchActive: true,
+  defaultDirection: 'ltr',
+  themeRadiusStorageKey: 'delegation-themeradius',
+  isAuthGuardActive: true,
+};
